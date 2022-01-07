@@ -41,6 +41,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   onCheckout() {
+    // @ts-ignore
     this.spinner.show().then(p => {
       this.cartService.CheckoutFromCart(1);
     });
