@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {database} = require('../config/Helpers');
-module.exports = router;
+const {database} = require('../config/helpers');
 
 /* GET ALL PRODUCTS */
 router.get('/', function (req, res) {       // Sending Page Query Parameter is mandatory http://localhost:3636/api/products?page=1
@@ -47,10 +46,12 @@ router.get('/', function (req, res) {       // Sending Page Query Parameter is m
         .catch(err => console.log(err));
 });
 
-/* GET SINGLE PRODUCT */
+/* GET ONE PRODUCT*/
 router.get('/:prodId', (req, res) => {
     let productId = req.params.prodId;
-    database.table('products as p').join([{
+    database.table('products as p')
+        .join([
+            {
                 table: "categories as c",
                 on: `c.id = p.cat_id`
             }
@@ -123,3 +124,6 @@ router.get('/category/:catName', (req, res) => { // Sending Page Query Parameter
         }).catch(err => res.json(err));
 
 });
+
+
+module.exports = router;
