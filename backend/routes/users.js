@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {database} = require('../config/helpers');
+const {database} = require('../config/Helpers');
 
 /* GET users listing. */
 router.get('/', function (req, res) {

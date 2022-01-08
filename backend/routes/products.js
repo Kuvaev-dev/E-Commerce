@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {database} = require('../config/helpers');
+const {database} = require('../config/Helpers');
 
 /* GET ALL PRODUCTS */
 router.get('/', function (req, res) {       // Sending Page Query Parameter is mandatory http://localhost:3636/api/products?page=1

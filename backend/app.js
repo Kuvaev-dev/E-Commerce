@@ -15,7 +15,7 @@ const swaggerOptions = {
             contact: {
                 name: 'Amazing Developer'
             },
-            servers: "http://localhost:3636"
+            servers: "http://localhost:4200"
         }
     },
     apis: ["app.js", ".routes/*.js"]
@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const authRouter = require('./routes/auth');
-const orderRouter = require('./routes/order');
+const orderRouter = require('./routes/orders');
 
 // Define Routes
 /**
