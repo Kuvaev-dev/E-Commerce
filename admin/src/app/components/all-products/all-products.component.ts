@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {Product}
-declare var $: any;
+import { ProductService } from 'src/app/product.service';
 
 @Component({
   selector: 'app-all-products',
@@ -45,7 +44,6 @@ export class AllProductsComponent implements OnInit, OnDestroy {
 
         this.products = res.products;
         console.log(this.products);
-        $('.alert').delay(1000).slideUp(1500);
       }
     ));
   }
