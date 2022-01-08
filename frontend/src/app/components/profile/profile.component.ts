@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+// @ts-ignore
 import {AuthService, SocialUser} from 'angularx-social-login';
 import {ResponseModel, UserService} from '../../services/user.service';
 import {Router} from '@angular/router';

@@ -58,7 +58,6 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    // @ts-ignore
     this.userService.registerUser({...this.registrationForm.value}).subscribe((response: { message: string }) => {
       this.registrationMessage = response.message;
     });
