@@ -8,7 +8,7 @@ import {ProductModelServer, serverResponse} from "../models/product.model";
   providedIn: 'root'
 })
 export class ProductService {
-  private url = environment.serverURL;
+  private url = environment.SERVER_URL;
 
   constructor(private http: HttpClient) {
   }

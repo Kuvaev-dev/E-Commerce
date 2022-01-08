@@ -11,11 +11,13 @@ import {HomeComponent} from './../app/components/home/home.component';
 import {ProductComponent} from './../app/components/product/product.component';
 import {ThankyouComponent} from './../app/components/thankyou/thankyou.component';
 import {HttpClientModule} from '@angular/common/http';
+// @ts-ignore
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {ToastrModule} from 'ngx-toastr';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './../app/components/login/login.component';
 import {ProfileComponent} from './../app/components/profile/profile.component';
+// @ts-ignore
 import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from 'angularx-social-login';
 import {RegisterComponent} from './../app/components/register/register.component';
 import {HomeLayoutComponent} from './../app/components/home-layout/home-layout.component';
@@ -26,7 +28,6 @@ const config = new AuthServiceConfig([
     id: GoogleLoginProvider.PROVIDER_ID,
     provider: new GoogleLoginProvider('799705726167-vn6184fsovmps0kpbg5c7jabv15r3ias.apps.googleusercontent.com')
   }
-
 ]);
 
 export function provideConfig() {

@@ -18,7 +18,7 @@ import {ToastrService} from "ngx-toastr";
 
 export class CartService {
 
-  ServerURL = environment.serverURL;
+  ServerURL = environment.SERVER_URL;
 
   private cartDataClient: CartModelPublic = {prodData: [{incart: 0, id: 0}], total: 0};  // This will be sent to the backend Server as post data
   // Cart Data variable to store the cart information on the server
