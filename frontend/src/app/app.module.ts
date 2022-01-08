@@ -1,38 +1,52 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HomeComponent} from './components/home/home.component';
-import {LoginComponent} from './components/login/login.component';
-import {RegisterComponent} from './components/register/register.component';
-import {CartComponent} from './components/cart/cart.component';
-import {CheckoutComponent} from './components/checkout/checkout.component';
-import {HttpClientModule} from "@angular/common/http";
-import {ProductComponent} from './components/product/product.component';
-import {ThankyouComponent} from './components/thankyou/thankyou.component';
-import {NgxSpinnerModule} from "ngx-spinner";
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AppRoutingModule} from './../app/app-routing.module';
+import {AppComponent} from './../app/app.component';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {HeaderComponent} from './../app/components/header/header.component';
+import {FooterComponent} from './../app/components/footer/footer.component';
+import {CartComponent} from './../app/components/cart/cart.component';
+import {CheckoutComponent} from './../app/components/checkout/checkout.component';
+import {HomeComponent} from './../app/components/home/home.component';
+import {ProductComponent} from './../app/components/product/product.component';
+import {ThankyouComponent} from './../app/components/thankyou/thankyou.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxSpinnerModule} from 'ngx-spinner';
 import {ToastrModule} from 'ngx-toastr';
-import { HomeLayoutComponent } from './home-layout/home-layout.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoginComponent} from './../app/components/login/login.component';
+import {ProfileComponent} from './../app/components/profile/profile.component';
+import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from 'angularx-social-login';
+import {RegisterComponent} from './../app/components/register/register.component';
+import {HomeLayoutComponent} from './../app/components/home-layout/home-layout.component';
+
+
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('799705726167-vn6184fsovmps0kpbg5c7jabv15r3ias.apps.googleusercontent.com')
+  }
+
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    LoginComponent,
-    RegisterComponent,
     CartComponent,
     CheckoutComponent,
+    HomeComponent,
     ProductComponent,
     ThankyouComponent,
-    HomeLayoutComponent,
-    ProfileComponent
+    LoginComponent,
+    ProfileComponent,
+    RegisterComponent,
+    HomeLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -41,11 +55,17 @@ import { ProfileComponent } from './components/profile/profile.component';
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
-    ReactiveFormsModule,
+    ToastrModule.forRoot(),
     FormsModule,
-    ToastrModule.forRoot()
+    ReactiveFormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
