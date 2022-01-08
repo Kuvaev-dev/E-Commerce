@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+// @ts-ignore
 import {RouterModule, Routes} from '@angular/router';
 import {ProductComponent} from './components/product/product.component';
 import {CartComponent} from './components/cart/cart.component';

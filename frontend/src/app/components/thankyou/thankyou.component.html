@@ -6,6 +6,7 @@
         <p class="lead"><strong>Please check your email</strong> for order confirmation.</p>
         <hr>
         <p>
+
         <p>Order Id : <strong>{{orderId}}</strong></p>
       </div>
 
@@ -21,10 +22,10 @@
         <tbody>
         <tr *ngFor="let p of products">
           <td>
-            <img [src]="p.image" alt="{{p.title}}" class="img-thumbnail" width="100px">
+            <img [src]="p.image" alt="{{p.name}}" class="img-thumbnail" width="100px">
           </td>
-          <td>{{p.title}}</td>
-          <td>{{p.price}}</td>
+          <td>{{p.name}}</td>
+          <td>{{p.price | currency:'USD'}}</td>
           <td>{{p.quantityOrdered}}</td>
         </tr>
 
@@ -32,7 +33,7 @@
           <td style="border: none;"></td>
           <td></td>
           <td>TOTAL</td>
-          <td>{{cartTotal}}</td>
+          <td>{{cartTotal | currency:'USD'}}</td>
         </tr>
         </tbody>
       </table>

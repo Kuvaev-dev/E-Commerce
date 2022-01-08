@@ -5,10 +5,12 @@ import {CartModelPublic, CartModelServer} from "../models/cart.model";
 import {ProductModelServer} from "../models/product.model";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+// @ts-ignore
 import {NavigationExtras, Router} from "@angular/router";
 import {OrderService} from "./order.service";
 // @ts-ignore
 import {NgxSpinnerService} from "ngx-spinner";
+// @ts-ignore
 import {ToastrService} from "ngx-toastr";
 
 @Injectable({
@@ -248,6 +250,7 @@ export class CartService {
                 }
               };
               this.spinner.hide().then();
+              // @ts-ignore
               this.router.navigate(['/thankyou'], navigationExtras).then(p => {
                 this.cartDataClient = {prodData: [{incart: 0, id: 0}], total: 0};
                 this.cartTotal$.next(0);

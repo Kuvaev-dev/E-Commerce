@@ -13,6 +13,7 @@ import {ThankyouComponent} from './../app/components/thankyou/thankyou.component
 import {HttpClientModule} from '@angular/common/http';
 // @ts-ignore
 import {NgxSpinnerModule} from 'ngx-spinner';
+// @ts-ignore
 import {ToastrModule} from 'ngx-toastr';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './../app/components/login/login.component';

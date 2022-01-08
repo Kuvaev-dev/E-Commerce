@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+// @ts-ignore
 import {Router} from "@angular/router";
 import {OrderService} from "../../services/order.service";
 

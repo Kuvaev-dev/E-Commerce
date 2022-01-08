@@ -17,11 +17,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cartService.cartTotal$.subscribe(total => {
-      this.cartTotal = total;
-    });
+    this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
 
-    this.cartService.cartDataObs$.subscribe(data => this.cartData = data);
+    this.cartService.cartData$.subscribe(data => this.cartData = data);
+
+    this.userService.authState$.subscribe(authState => this.authState = authState);
   }
 
 }

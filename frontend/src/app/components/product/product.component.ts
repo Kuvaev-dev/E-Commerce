@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+// @ts-ignore
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ProductService} from "../../services/product.service";
 import {ProductModelServer} from "../../models/product.model";
@@ -35,6 +36,7 @@ export class ProductComponent implements AfterViewInit, OnInit {
         // @ts-ignore
         return param.params.id;
       })
+      // @ts-ignore
     ).subscribe(prodId => {
       this.id = prodId;
       this.productService.getSingleProduct(this.id).subscribe(prod => {

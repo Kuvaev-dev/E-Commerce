@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 // @ts-ignore
 import {AuthService, SocialUser} from 'angularx-social-login';
 import {ResponseModel, UserService} from '../../services/user.service';
+// @ts-ignore
 import {Router} from '@angular/router';
 import {map} from 'rxjs/operators';
 
